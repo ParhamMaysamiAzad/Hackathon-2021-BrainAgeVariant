@@ -5,11 +5,11 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <!--<a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
-    </li>
+   <!-- </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -32,9 +32,9 @@
 ## About The Project
 
 ### The Problem
-The Problem: * Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+The Problem: BrainTrain focuses on assisting to solving the education crisis plaguing areas in the world. 
+* Many people around the world suffer from a lack of quality education
+* Causing 
 
 ### The Solution
 Our Solution:
