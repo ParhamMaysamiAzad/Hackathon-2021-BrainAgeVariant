@@ -31,7 +31,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-BrainTrain is a web-based application based on the 2001 game "Brain Age 2". The game consists of multiple activities that stimulate differant areas of the prefrontal cortex in the brain. Activities range from mathematical proficiency, to musical talent, and many more. 
+
+The Problem: * Your time should be focused on creating something amazing. A project that solves a problem and helps others
+* You shouldn't be doing the same tasks over and over like creating a README from scratch
+* You should implement DRY principles to the rest of your life :smile:
+
+Our Solution:
+BrainTrain is a web-based application based on the 2001 game "Brain Age 2". The game consists of multiple activities intended to stimulate differant areas of the brain. Activities range from mathematical proficiency, to musical talent, and many more. With the intention of allowing users to build a profiency in basic arithmetic, memorization, etc...  
 
 Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
