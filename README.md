@@ -31,7 +31,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+BrainTrain is a web-based application based on the 2001 game "Brain Age 2". The game consists of multiple activities that stimulate differant areas of the prefrontal cortex in the brain. Activities range from mathematical proficiency, to musical talent, and many more. 
 
 Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
