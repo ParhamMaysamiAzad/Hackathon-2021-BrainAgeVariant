@@ -1,2 +1,2 @@
-# Hackhaton-2021-BrainAgeVariant
+# Hackathon-2021-BrainAgeVariant
 Ben, Jacob, and Parham's Hackaton project
