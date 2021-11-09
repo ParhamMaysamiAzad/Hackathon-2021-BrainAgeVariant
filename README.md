@@ -16,6 +16,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -23,23 +24,8 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
 
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
-  </p>
-</div>
-
-
+  
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -66,12 +52,12 @@
   </ol>
 </details>
 
+  
+  
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+<p> The Hackathon is an activity designed to allow you to engage with your interests and values to work towards engaging with the tools readily available on the web to build something that you can present at the end of the experience. Use the proposal to get your team together and on the same page, use the GitHub repo as a place to define your project and put it together, and finally use the "app reveal" presentation to share your experience with the class as you reflect on your learning experiences. </p>
 
 Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
@@ -84,8 +70,8 @@ Use the `BLANK_README.md` to get started.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
+  
+  
 ### Built With
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
