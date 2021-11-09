@@ -46,7 +46,7 @@ Our application consists of a variety of educational activities available to pla
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-#### Built With
+### Built With
 
 BrainTrain utilizes these tools in order to operate efficiently.
 
