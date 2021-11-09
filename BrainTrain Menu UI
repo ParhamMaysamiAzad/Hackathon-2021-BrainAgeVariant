@@ -6,20 +6,30 @@
 
 // <---HEADER--->
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(800, 600);
 }
 
-//declaring button to start "game 1"
+//declaring button to start GAMENAME1
 var buttonGame1 = function(){
-  rect(200,50,150,50);
+  rectMode(CENTER);
+  rect(width/2,100,650,100);
   textSize(20)
-  text(GAMENAME1,100,100)
+  text(GAMENAME1,150,80)
+  
+};
+
+//declaring button to start GAMENAME2
+var buttonGame2 = function(){
+  rectMode(CENTER);
+  rect(width/2,250,650,100);
+  textSize(20)
+  text(GAMENAME1,150,80)
   
 };
 
 //declaring the menuScene
 var menuScene = function(){
-  background(156,156,156);
+  background(200,156,200);
 };
 
 
@@ -27,7 +37,7 @@ var menuScene = function(){
 
 //CONSTANTS
 
-GAMENAME1 = "Game1"
+GAMENAME1 = "Game1" //Note : realign
 GAMENAME2 = "Game2"
 GAMENAME3 = "Game2"
 GAMENAME4 = "Game2"
@@ -35,4 +45,5 @@ GAMENAME4 = "Game2"
 function draw() {
   menuScene();
   buttonGame1();
+  buttonGame2();
 }
