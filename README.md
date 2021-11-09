@@ -53,7 +53,7 @@ BrainTrain utilizes these tools in order to operate efficiently.
 * [Node.js](https://nodejs.org/en/) 
 * [GitHub](https://github.com/)
 * [Glitch](https://glitch.com/)
-* [p5.Editor](https://editor.p5js.org/)
+* [P5.Editor](https://editor.p5js.org/)
 
 ### How to edit
 
