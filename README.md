@@ -46,6 +46,8 @@ BrainTrain is a web-based application based on the 2001 game "Brain Age 2". The 
 
 The game consists of a opening sequence, before introducing all of the educational mini-games available to play. Data is recorded from these sessions and can be used to evaluate the user's "brain age" at their request.
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 #### Built With
 
 BrainTrain utilizes these tools in order to operate efficiently.
