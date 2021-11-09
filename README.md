@@ -34,11 +34,11 @@
 ### The Problem
 The Problem: BrainTrain focuses on assisting to solving the education crisis plaguing areas in the world. 
 * Many people around the world suffer from a lack of quality education
-* Causing 
+* Causing a limitiation in creativity and ingenuity
 
 ### The Solution
 Our Solution:
-BrainTrain is a web-based application based on the 2001 game "Brain Age 2". The game consists of multiple activities intended to stimulate differant areas of the brain. Activities range from mathematical proficiency, to musical talent, and many more. With the intention of allowing users to build a profiency in basic arithmetic, memorization, etc...  
+BrainTrain is a web-based application based on the 2001 game "Brain Age 2". The game consists of multiple activities intended to stimulate differant areas of the brain. Activities range from mathematical proficiency, to musical talent, and many more. With the intention of allowing users to build a profiency in basic mental skills, such as arithmetic, memorization, etc...  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
