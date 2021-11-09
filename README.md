@@ -50,7 +50,7 @@ Our application consists of a variety of educational activities available to pla
 
 BrainTrain utilizes these tools in order to operate efficiently.
 
-* [Node.js]
+* [Node.js] 
 * [GitHub]
 * [Glitch]
 * [p5.Editor]
