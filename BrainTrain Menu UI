@@ -1,0 +1,38 @@
+//_author_ = "Parham Maysami-Azad"
+//_date_ = "Tuesday, November 9th, 2021"
+//_version_ = "1.0"
+//_filename_ = "sketch.js"
+//_description_ = "BrainTrain Menu UI."
+
+// <---HEADER--->
+function setup() {
+  createCanvas(400, 400);
+}
+
+//declaring button to start "game 1"
+var buttonGame1 = function(){
+  rect(200,50,150,50);
+  textSize(20)
+  text(GAMENAME1,100,100)
+  
+};
+
+//declaring the menuScene
+var menuScene = function(){
+  background(156,156,156);
+};
+
+
+// <---MAIN PROGRAM--->
+
+//CONSTANTS
+
+GAMENAME1 = "Game1"
+GAMENAME2 = "Game2"
+GAMENAME3 = "Game2"
+GAMENAME4 = "Game2"
+  
+function draw() {
+  menuScene();
+  buttonGame1();
+}
