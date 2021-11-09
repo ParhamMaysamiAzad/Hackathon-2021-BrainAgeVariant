@@ -57,8 +57,9 @@ BrainTrain utilizes these tools in order to operate efficiently.
 
 ### How to edit
 
-<p>If you would like to report a bug, please do so in the issues tab.
-If you would like to modify the code, please request it in the issues tab. Alternatively, you can create a seperate branch with your changes that will be manualy reviewed and evaluated for its changes. </p>
+<p>If you would like to report a bug, please do so in the issues tab. <br>
+If you would like to modify the code, please request it in the issues tab. <br> 
+Alternatively, you can create a seperate branch with your changes that will be manualy reviewed and evaluated for its changes. <br></p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
