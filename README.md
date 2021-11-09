@@ -57,7 +57,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<p> The Hackathon is an activity designed to allow you to engage with your interests and values to work towards engaging with the tools readily available on the web to build something that you can present at the end of the experience. Use the proposal to get your team together and on the same page, use the GitHub repo as a place to define your project and put it together, and finally use the "app reveal" presentation to share your experience with the class as you reflect on your learning experiences. </p>
+<p> The Hackathon is an activity designed to allow personal engagement with interests and values to work towards engaging with the tools readily available on the web to build something that you can present at the end of the experience.
 
 Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
