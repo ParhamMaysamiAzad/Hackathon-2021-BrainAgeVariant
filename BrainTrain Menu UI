@@ -17,7 +17,8 @@ var buttonGame1 = function(){
   rect(width/2,90,650,100);
   noStroke();
   textSize(40)
-  text(GAMENAME1,275,110)
+  textAlign(CENTER, CENTER);
+  text(GAMENAME1,width/2,110)
   
 };
 
@@ -29,7 +30,7 @@ var buttonGame2 = function(){
   rect(width/2,230,650,100);
   noStroke();
   textSize(40)
-  text(GAMENAME2,200,245)
+  text(GAMENAME2,width/2,245)
   
 };
 
@@ -41,7 +42,7 @@ var buttonGame3 = function(){
   rect(width/2,370,650,100);
   noStroke();
   textSize(40)
-  text(GAMENAME3,250,385)
+  text(GAMENAME3,width/2,385)
   
 };
 
@@ -54,7 +55,7 @@ var buttonGame4 = function(){
   rect(width/2,510,400,100);
   noStroke();
   textSize(40)
-  text(GAMENAME4,250,525)
+  text(GAMENAME4,width/2,525)
   
 };
 
