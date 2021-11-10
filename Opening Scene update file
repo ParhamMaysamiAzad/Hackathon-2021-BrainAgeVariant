@@ -72,7 +72,7 @@ function draw() {
   //Scene translations
   if(scene == 0){
     //opening scene
-    background(255, 0, 0)
+    background(215,135,145);
     startButton.draw();
     scoreButton.draw();
   }
