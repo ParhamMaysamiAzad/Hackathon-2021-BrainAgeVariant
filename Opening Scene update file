@@ -1,0 +1,83 @@
+function setup() {
+  createCanvas(400, 400);
+}
+//Make an openning scene
+
+//Button properties
+var Button = function(config) {
+  this.x = config.x || 0;
+  this.y = config.y || 0;
+  this.width = config.width || 80;
+  this.height = config.height || 50;
+  this.label = config.label || "Click";
+  this.color = config.color || color(20, 185, 85);
+  this.onClick = config.onClick || function() {};
+};
+//Prototype checking if mouse inside
+Button.prototype.isMouseInside = function() {
+    return mouseX > this.x-this.width/2 &&
+           mouseX < (this.x + this.width/2) &&
+           mouseY > this.y - this.height/2 &&
+           mouseY < (this.y + this.height/2);
+};
+Button.prototype.handleMouseClick = function() {
+    if (this.isMouseInside()) {
+        this.onClick();
+    }
+};
+
+//Prototype draw button
+Button.prototype.draw = function() {
+  if (this.isMouseInside && mouseIsPressed) {
+    fill(47, 0, 255);
+  } else {
+    fill(this.color);
+  }
+  rectMode(CENTER);
+  rect(this.x, this.y, this.width, this.height, 5);
+  fill("black");
+  textSize(19);
+  textAlign(CENTER, CENTER);
+  text(this.label, this.x, this.y);
+};
+
+//create start button
+var startButton;
+var startButton = new Button({
+    x:200,
+    y:150,
+    width:80,
+    height:40,
+    label: "Play!",
+    color: "white",
+    onClick : function (){ scene = 2;
+     }
+});
+//Score button
+var scoreButton;
+  var scoreButton = new Button({
+    x:200,
+    y:200,
+    width:80,
+    height:40,
+    label: "Scores",
+    color: "white",
+    onClick : function (){ scene = 99;
+     }
+});
+
+var scene = 0;
+function draw() {
+  
+  //Scene translations
+  if(scene == 0){
+    //opening scene
+    background(255, 0, 0)
+    startButton.draw();
+    scoreButton.draw();
+  }
+  }
+mouseClicked = function() {
+    startButton.handleMouseClick();
+    scoreButton.handleMouseClick();
+};
