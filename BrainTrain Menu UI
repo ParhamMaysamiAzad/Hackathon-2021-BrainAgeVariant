@@ -12,38 +12,95 @@ function setup() {
 //declaring button to start GAMENAME1
 var buttonGame1 = function(){
   rectMode(CENTER);
-  rect(width/2,100,650,100);
-  textSize(20)
-  text(GAMENAME1,150,80)
+  stroke(185,105,115);
+  strokeWeight(5)
+  rect(width/2,90,650,100);
+  noStroke();
+  textSize(40)
+  text(GAMENAME1,275,110)
   
 };
 
 //declaring button to start GAMENAME2
 var buttonGame2 = function(){
   rectMode(CENTER);
-  rect(width/2,250,650,100);
-  textSize(20)
-  text(GAMENAME1,150,80)
+  stroke(185,105,115);
+  strokeWeight(5)
+  rect(width/2,230,650,100);
+  noStroke();
+  textSize(40)
+  text(GAMENAME2,200,245)
+  
+};
+
+//declaring button to start GAMENAME3
+var buttonGame3 = function(){
+  rectMode(CENTER);
+  stroke(185,105,115);
+  strokeWeight(5)
+  rect(width/2,370,650,100);
+  noStroke();
+  textSize(40)
+  text(GAMENAME3,250,385)
+  
+};
+
+
+//declaring button to start GAMENAME4
+var buttonGame4 = function(){
+  rectMode(CENTER);
+  stroke(185,105,115);
+  strokeWeight(5)
+  rect(width/2,510,400,100);
+  noStroke();
+  textSize(40)
+  text(GAMENAME4,250,525)
   
 };
 
 //declaring the menuScene
 var menuScene = function(){
-  background(200,156,200);
+  background(215,135,145);
 };
 
+//declaring the WordMatchScene
+var GAMENAME1Scene = function(){
+  background(256,256,256);
+  
+};
 
+//declaring the NumberMemorisation Scene
+var GAMENAME2Scene = function(){
+  background(256,256,256);
+  
+};
+
+//declaring the Speed Add/Sub Scene
+var GAMENAME3Scene = function(){
+  background(256,256,256);
+  
+};
+
+//delcaring the Brain Age Check Scene
+var GAMENAME4Scene = function(){
+  background(256,256,256);
+  
+};
 // <---MAIN PROGRAM--->
 
 //CONSTANTS
 
-GAMENAME1 = "Game1" //Note : realign
-GAMENAME2 = "Game2"
-GAMENAME3 = "Game2"
-GAMENAME4 = "Game2"
-  
+///MiniGame Name constants
+GAMENAME1 = "Word-Match" //Note : realign
+GAMENAME2 = "Number Memorisation"
+GAMENAME3 = "Speed Add/Sub"
+GAMENAME4 = "Brain Age Check"
+
+//Displaying to screen
 function draw() {
   menuScene();
   buttonGame1();
   buttonGame2();
+  buttonGame3();
+  buttonGame4(); //optional
 }
