@@ -1,0 +1,37 @@
+//_author_ = "Parham Maysami-Azad"
+//_date_ = "Wednesday, November 10th, 2021"
+//_version_ = "1.0"
+//_filename_ = "sketch.js"
+//_description_ = "BrainTrain Speed Add/Sub Mini-Game."
+
+// <--------- HEADER --------->
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+}
+
+// <--------- MAIN PROGRAM --------->
+
+//creating storage variables
+var correct = 0;
+var rnum1 = 0;
+var rnum2 = 0;
+var answer = 0;
+
+//looping the game
+while (correct < 11){
+  rnum1 = random(1,20);
+  rnum2 = random(1,20);
+  answer = rnum1 + rnum2;
+  
+  user = int(input());
+  
+  
+  
+}
+
+
