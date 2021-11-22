@@ -1,0 +1,180 @@
+//_authors_ = "Benjamin Phan " 
+//_date_ = "Monday, November 22nd, 2021"
+//_version_ = "1.0"
+//_filename_ = "sketch.js"
+//_description_ = "BrainTrain Introduction/GameSelectionUI."
+
+// <--------- HEADER --------->
+
+function setup() {
+  createCanvas(800, 600);
+}                
+
+// Button constructor
+var Button = function(config) {
+  this.x = config.x || 0;
+  this.y = config.y || 0;
+  this.width = config.width || 80;
+  this.height = config.height || 50;
+  this.label = config.label || "Click";
+  this.color = config.color || color(235,235,235);
+  this.onClick = config.onClick || function() {};
+};
+
+// Prototype checking if mouse inside
+Button.prototype.isMouseInside = function() {
+    return mouseX > this.x-this.width/2 &&
+           mouseX < (this.x + this.width/2) &&
+           mouseY > this.y - this.height/2 &&
+           mouseY < (this.y + this.height/2);
+};
+
+// Protoype when mouseClicked
+Button.prototype.handleMouseClick = function() {
+    if (this.isMouseInside()) {
+        this.onClick();
+    }
+};
+
+// Prototype draw button
+Button.prototype.draw = function() {
+  if (this.isMouseInside && mouseIsPressed) {
+    fill(135,135,135);
+  } else {
+    fill(this.color);
+  }
+  rectMode(CENTER);
+  rect(this.x, this.y, this.width, this.height, 5);
+  fill("black");
+  textSize(19);
+  textAlign(CENTER, CENTER);
+  text(this.label, this.x, this.y);
+};
+
+// Create start button
+var startButton;
+var startButton = new Button({
+    x:400,
+    y:350,
+    width:700,
+    height:200,
+    label: "Play",
+    color: "white",
+    onClick : function (){ scene = 1;
+     }
+});
+
+// Score button
+var scoreButton;
+  var scoreButton = new Button({
+    x:400,
+    y:525,
+    width: 350,
+    height:75,
+    label: "Scores",
+    color: "white",
+    onClick : function (){ scene = 2;
+     }
+});
+
+// Sudoku button
+var sudokuButton;
+  var sudokuButton = new Button({
+    x:400,
+    y:90,
+    width: 650,
+    height:100,
+    label: "Sudoku",
+    color: "white",
+    onClick : function (){ scene = 3;
+     }
+});
+
+// Word-Match button
+var wmButton;
+  var wmButton = new Button({
+    x:400,
+    y:230,
+    width: 650,
+    height:100,
+    label: "Word-Match",
+    color: "white",
+    onClick : function (){ scene = 4;
+     }
+});
+
+// Speed Add/Sub button
+var sasButton;
+  var sasButton = new Button({
+    x:400,
+    y:370,
+    width: 650,
+    height:100,
+    label: "Speed Add/Sub",
+    color: "white",
+    onClick : function (){ scene = 5;
+     }
+});
+
+// Number memorisation button
+var nmButton;
+  var nmButton = new Button({
+    x:400,
+    y:510,
+    width: 650,
+    height:100,
+    label: "Number Memorisation",
+    color: "white",
+    onClick : function (){ scene = 6;
+     }
+});
+
+// <--------- SCENES --------->
+var scene = 0;
+
+function draw() {
+  
+    mouseClicked = function() {
+    startButton.handleMouseClick();
+    scoreButton.handleMouseClick();
+  };  
+
+  // Scene translations
+  if(scene == 0){
+    // Introductory UI
+    background(255,255,255);
+    startButton.draw();
+    scoreButton.draw();
+    
+  }else if(scene === 1){
+    // Game Selection UI
+    background(255,255,255);
+    sudokuButton.draw();
+    wmButton.draw();
+    sasButton.draw();
+    nmButton.draw();
+   
+    if(scene === 3){
+    // Sudoku Mini-Game
+    background(0,0,0);
+      
+    }else if(scene === 4){
+    // Word-Match Mini-Game
+    background(0,0,0);
+      
+    }
+    else if(scene === 5){
+    // Addition/Subtraction Mini-Game
+    background(0,0,0);
+
+    }
+    else if(scene === 6){
+    // NumberMatch Mini-Game
+    background(0,0,0);
+
+    }
+  }else if(scene ===2){
+    // Score UI
+    background(0,0,0)
+  }
+}
