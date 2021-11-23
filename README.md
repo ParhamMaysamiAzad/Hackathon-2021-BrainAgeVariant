@@ -36,7 +36,7 @@ The Problem: BrainTrain focuses on assisting to solving the education crisis pla
 
 ### The Solution
 Our Solution:
-BrainTrain is a web-based application based on the 2001 game "Brain Age 2". The application consists of multiple activities intended to stimulate different areas of the brain. Activities range from word-match, to addition/subtraction speedruns, mini-sudoku, and many more. The intention is to provide users all-alike with an application that allows the ability to build a profiency in basic mental skills, such as arithmetic, memorization, etc...  
+BrainTrain is a web-based application based on the 2001 game "Brain Age 2". The application consists of multiple activities intended to stimulate different areas of the brain. Activities range from word-match to addition/subtraction speed runs, mini-sudoku, and many more. The intention is to provide users all-alike with an application that allows the ability to build proficiency in basic mental skills, such as arithmetic, memorization, etc... 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
