@@ -1,0 +1,829 @@
+/**********************************\
+--------- Sudoku App Styles --------
+
+  Contents:
+  - Global definitions
+  - Modules
+
+  Each module may have its own
+  variables, mixins, animations and
+  media queries.
+
+  This is the convention followed
+  in structuring rules
+
+  // ==================
+  // Foo
+  // ==================
+  
+  // Variables (Variables of Foo)
+  [...]
+
+  // Lorem (Lorem of foo)
+  [...]
+  
+  // ==================
+  // Bar
+  // ==================
+  
+  [...]
+
+\**********************************/
+
+// ==================
+// Global
+// ==================
+
+// Fonts
+@font-face {
+  src: url("http://enes.in/GillSansTr-LightNr.otf");
+  font-family: Gill;
+  font-weight: 100
+}
+
+@font-face {
+  src: url("http://enes.in/GillSansTr-Normal.otf");
+  font-family: Gill;
+  font-weight: 300
+}
+
+@font-face {
+  src: url("http://enes.in/GillSansTr-Bold.otf");
+  font-family: Gill;
+  font-weight: 600
+}
+
+@font-face {
+  src: url("http://enes.in/GillSansTr-ExtraBold.otf");
+  font-family: Gill;
+  font-weight: 700
+}
+
+@font-face {
+  src: url("http://enes.in/GillSansTr-UltraBold.otf");
+  font-family: Gill;
+  font-weight: 900
+}
+
+html, body {
+  width: 100%;
+  height: 100%
+}
+
+body {
+  margin: 0;
+  background: #f0f0f0
+}
+
+// Variables
+$g-transition-duration: .2s;
+$g-breakpoint-xs: 260px;
+$g-breakpoint-sm: 420px;
+$g-breakpoint-md: 615px;
+
+// Responsive
+@media (max-width: $g-breakpoint-xs) {
+  .show-on-sm { display: none; }
+  .show-on-md { display: none; }
+  .show-on-lg { display: none; }
+  .show-on-xs { display: block; }
+}
+
+@media (max-width: $g-breakpoint-sm) {
+  .show-on-xs { display: none; }
+  .show-on-md { display: none; }
+  .show-on-lg { display: none; }
+  .show-on-sm { display: block; }
+}
+
+@media (min-width: $g-breakpoint-sm + 1)
+  and (max-width: $g-breakpoint-md) {
+  .show-on-xs { display: none; }
+  .show-on-sm { display: none; }
+  .show-on-lg { display: none; }
+  .show-on-md { display: block; }
+}
+
+@media (min-width: $g-breakpoint-md) {
+  .show-on-xs { display: none; }
+  .show-on-sm { display: none; }
+  .show-on-md { display: none; }
+  .show-on-lg { display: block; }
+}
+
+// Animations
+@keyframes progress {
+    0%   {
+      box-shadow: none;
+    }
+    25%  {
+      box-shadow: 2px -2px 0 1px;
+    }
+    50%  {
+      box-shadow: 2px -2px 0 1px,
+                  7px -2px 0 1px;
+    }
+    100% {
+      box-shadow: 2px -2px 0 1px,
+                  7px -2px 0 1px,
+                  12px -2px 0 1px;
+    }
+}
+
+.fr { float: right; }
+.fl { float: left; }
+
+// ==================
+// Modules
+// ==================
+
+// ==================
+// CTA Button
+// ==================
+
+// Variables
+$button-primary-color: lighten(desaturate(blue, 35%), 5%);
+$button-secondary-color: lighten(desaturate(red, 35%), 5%);
+$button-tertiary-color: #2ECC40;
+$button-neutral-color: #333;
+$button-disabled-color: #bbb;
+$button-border-radius: 3px;
+
+// Mixins
+@mixin button-base(
+  $font-size,
+  $margin,
+  $padding,
+  $loading-padding-right) {
+    .button {
+      padding: $padding;
+      font-size: $font-size;
+      
+      &:not(:last-of-type) {
+        margin-right: $margin;
+      }
+      
+      &--loading {
+        padding-right: $loading-padding-right
+      }
+    }
+}
+
+// Responsive
+@media (max-width: $g-breakpoint-xs) {
+  @include button-base(
+    .6em,
+    .15em,
+    .25em .5em,
+    1.5em);
+}
+
+@media (min-width: $g-breakpoint-xs + 1)
+  and (max-width: $g-breakpoint-sm) {
+  @include button-base(
+    .75em,
+    .25em,
+    .25em .5em .15em,
+    1.5em);
+}
+
+@media (min-width: $g-breakpoint-sm + 1)
+  and (max-width: $g-breakpoint-md) {
+  @include button-base(
+    .9em,
+    .5em,
+    .5em .75em .4em,
+    1.5em);
+}
+
+@media (min-width: $g-breakpoint-md) {
+  @include button-base(
+    1em,
+    .75em,
+    .75em 1em .6em,
+    1.5em);
+}
+
+// Component
+.button {
+  border: 1px solid;
+  font-weight: normal;
+  border-radius: $button-border-radius;
+  background: none;
+  box-shadow: none;
+  transition: all $g-transition-duration;
+  
+  &--primary {
+    color: $button-primary-color;
+    font-weight: 600;
+  
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $button-primary-color;
+      background: $button-primary-color;
+    }
+    
+    &:focus {
+      box-shadow: 0 0 5px $button-primary-color;
+    }
+  }
+  
+  &--secondary {
+    color: $button-secondary-color;
+  
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $button-secondary-color;
+      background: $button-secondary-color;
+    }
+    
+    &:focus {
+      box-shadow: 0 0 5px $button-secondary-color;
+    }
+  }
+  
+  &--tertiary {
+    color: #fff;
+    border-color: $button-tertiary-color;
+    background: $button-tertiary-color;
+  }
+  
+  &--neutral {
+    color: $button-neutral-color;
+  
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $button-neutral-color;
+      background: $button-neutral-color;
+    }
+    
+    &:focus {
+      box-shadow: 0 0 5px $button-neutral-color;
+    }
+  }
+  
+  &--compound {
+    border-radius: 0;
+    border-right: none;
+    
+    &-first {
+      border-bottom-left-radius: $button-border-radius;
+      border-top-left-radius: $button-border-radius;
+    }
+    
+    &-last {
+      border-bottom-right-radius: $button-border-radius;
+      border-top-right-radius: $button-border-radius;
+      border-right: 1px solid;
+    }
+  }
+  
+  &--muted {
+    pointer-events: none;
+  }
+
+  &--disabled {
+    border-color: $button-disabled-color;
+    color: $button-disabled-color;
+    pointer-events: none;
+  }
+  
+  &--loading {
+    &-text::after {
+      display: inline-block;
+      width: 1px;
+      height: 1px;
+      content: '';
+      box-shadow: 2px -2px 1px 0;
+      animation: progress 1s infinite;
+    }
+  }
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+  
+  &:active {
+    box-shadow: inset 0 -2px 10px rgba(#000, .4);
+  }
+}
+
+// ==================
+// Feedback Messages
+// ==================
+
+// Component
+.message {
+  font-size: .9em;
+  padding: 2em;
+  margin: 0;
+  border-radius: 3px;
+  color: rgba(black, .75);
+  
+  &--busy {
+    background: rgba(blue, .1)
+  }
+  
+  &--fail {
+    background: rgba(red, .1)
+  }
+}
+
+// ==================
+// Sudoku Table
+// ==================
+
+// Variables
+$sudoku-color: #444;
+
+// Mixins
+@mixin sudoku-base(
+  $thin-border,
+  $thick-border,
+  $cell-size,
+  $font-size,
+  $title-size,
+  $padding-around,
+  $header-padding
+  ) {
+  .sudoku {
+    margin: 0 auto;
+    padding-top: $padding-around;
+    padding-bottom: $padding-around;
+    
+    &__header {
+      padding-bottom: $header-padding
+    }
+    
+    &__title {
+      font-size: $title-size
+    }
+    
+    &__table {
+      font-size: $font-size;
+      border-top: $thick-border;
+      border-left: $thick-border;
+      border-collapse: collapse;
+  
+      &-row {
+        border-bottom: $thin-border;
+        border-right: $thick-border;
+
+        &--separator {
+          border-bottom: $thick-border;
+        }
+      }
+
+      &-cell {
+        width: $cell-size;
+        height: $cell-size;
+        border-right: $thin-border;
+
+        &--separator {
+          border-right: $thick-border;
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: $g-breakpoint-xs) {
+  @include sudoku-base(
+    1px solid $sudoku-color,
+    2px solid $sudoku-color,
+    16px, .9em,  1em, .5em, .6em);
+  
+  .sudoku {
+    max-width: calc(#{$g-breakpoint-xs} / 1.5);
+    min-width: calc(#{$g-breakpoint-xs} / 2);
+  }
+}
+
+@media (min-width: $g-breakpoint-xs + 1)
+  and  (max-width: $g-breakpoint-sm) {
+  @include sudoku-base(
+    1px solid $sudoku-color,
+    3px solid $sudoku-color,
+    32px, 1.2em, 1.2em, 1em, .9em);
+  
+  .sudoku {
+    width: $g-breakpoint-xs;
+  }
+}
+
+@media (min-width: $g-breakpoint-sm + 1)
+  and (max-width: $g-breakpoint-md) {
+  @include sudoku-base(
+    1px solid $sudoku-color,
+    4px solid $sudoku-color,
+    48px, 1.5em, 1.5em, 2em, 1.3em);
+  
+  .sudoku {
+    width: $g-breakpoint-sm
+  }
+}
+
+@media (min-width: $g-breakpoint-md) {
+  @include sudoku-base(
+    2px solid $sudoku-color,
+    6px solid $sudoku-color,
+    64px, 1.75em, 2em, 3em, 1.618em);
+  
+  .sudoku {
+    width: $g-breakpoint-md
+  }
+}
+
+// Component
+.sudoku {
+  color: $sudoku-color;
+  
+  &__header {
+    font-family: Gill, sans-serif;
+  }
+  
+  &__title {
+    font-weight: 600
+  }
+  
+  &__description {
+    max-width: 640px;
+    line-height: 1.4;
+    font-weight: 100
+  }
+  
+  &__table {
+    background: #fff;
+    
+    &-row {}
+
+    &-cell {
+      overflow: hidden;
+      text-align: center;
+      transition: all .25s;
+
+      &--editable {
+        color: desaturate(blue, 25);
+        
+        &:focus {
+          background: rgba(blue, .1);
+          outline: none;
+        }
+      }
+      
+      &--error {
+        color: red;
+        background: #fdd;
+      }
+      
+      &--editable-error {
+        text-shadow: 0 0 15px;
+        
+        &:focus {
+          color: #eee;
+          background: #f45;
+        }
+      }
+    }
+    
+  }
+}h1 { 
+    background:black;
+    color:white;
+    margin:0px 0px 2px 0px;
+    font-size:20px;
+    padding:2px 1px 5px 1px;
+    text-align:center;    
+}
+
+body {
+    font-family:verdana,helvetica,arial,sans-serif;
+    border:0px; margin:0px; padding:0px;
+        
+    background:url(
+        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIUlEQVQYV2N89urtfwYiACNIoZSYMCMhtaMK8YYQ0cEDAG5yJ8eLRhTfAAAAAElFTkSuQmCC
+    ) repeat;
+}
+
+/* board */
+.sudoku_board {
+    margin:6px auto;
+  
+    overflow: hidden;
+    
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+    
+    box-shadow: 0px 0px 5px 5px #bdc3c7;
+}
+
+.sudoku_board .cell {    
+    width:11.11%;    
+    display: inline-block;    
+    float:left;
+    cursor:pointer;    
+    text-align: center;
+    overflow: hidden;  
+    
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	    box-sizing: border-box;
+    
+    box-shadow: 0px 0px 0px 1px #bdc3c7;
+  
+    background:white;
+}
+
+.sudoku_board .cell.border_h {
+    box-shadow: 0px 0px 0px 1px #bdc3c7, inset 0px -2px 0 0 #34495e;    
+}
+
+.sudoku_board .cell.border_v {
+    box-shadow: 0px 0px 0px 1px #bdc3c7, inset -2px 0 0 #34495e;
+}
+
+.sudoku_board .cell.border_h.border_v {
+    box-shadow: 0px 0px 0px 1px #bdc3c7, inset -2px 0 0 black, inset 0px -2px 0 black;
+}
+
+.sudoku_board .cell span {
+    color:#2c3e50;
+    font-size:14px;
+    text-align:middle;    
+}
+
+.sudoku_board .cell.selected, .sudoku_board .cell.selected.fix {
+    background:#FFE;    
+}
+
+.sudoku_board .cell.selected.current {
+    position:relative;
+    background: #3498db;
+    font-weight:bold;
+    box-shadow: 0px 0px 3px 3px #bdc3c7;
+}
+
+.sudoku_board .cell.selected.current span {
+    color:white;
+}
+
+.sudoku_board .cell.selected.group {
+    color:blue;    
+}
+
+.sudoku_board .cell span.samevalue, .sudoku_board .cell.fix span.samevalue {
+    font-weight:bold;  
+    color:#3498db;
+}
+
+.sudoku_board .cell.notvalid, .sudoku_board .cell.selected.notvalid{
+    font-weight:bold;
+    color:white;;
+    background:#e74c3c;
+}
+
+.sudoku_board .cell.fix {
+    background:#ecf0f1;
+    cursor:not-allowed;
+}
+
+.sudoku_board .cell.fix span {
+  color:#7f8c8d;
+}
+
+.sudoku_board .cell .solution {
+  font-size:10px;
+  color:#d35400;
+}
+
+.sudoku_board .cell .note {
+    color:#bdc3c7;    
+    width:50%;    
+    height:50%;
+    display: inline-block;    
+    float:left;
+    text-align:center;
+    font-size:14px;
+  
+    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+}
+
+.gameover_container .gameover {
+    color:white;
+    font-weight:bold;
+	    text-align:center; 
+    
+    display:block;
+    position:absolute;       
+    width:90%;    
+    padding:10px;
+    
+    box-shadow: 0px 0px 5px 5px #bdc3c7;
+}
+
+
+.restart {
+  background:#7F8C8D;
+  color:#ecf0f1;
+}
+
+/* console */
+.board_console_container, .gameover_container {
+    background-color: rgba(127, 140, 141, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+     -webkit-user-select: none;  
+     -moz-user-select: none;    
+     -ms-user-select: none;      
+     user-select: none;
+}
+
+.board_console {
+    display:block;
+    position:absolute;        
+    width:50%;        
+    color:white;
+    background-color: rgba(127, 140, 141, 0.7);
+    box-shadow: 0px 0px 5px 5px #bdc3c7;
+}
+
+.board_console .num {
+    width:33.33%;    
+    color:#2c3e50;    
+    padding: 1px;
+    display: inline-block;    
+    font-weight:bold;
+    font-size:24px;
+    text-align: center;    
+    cursor:pointer;
+    
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	    box-sizing: border-box;
+    
+    box-shadow: 0px 0px 0px 1px #bdc3c7;
+}
+
+
+.board_console .num:hover {
+    color:white;
+    background:#f1c40f;
+}
+
+.board_console .num.remove {
+    width:66.66%;    
+}
+
+.board_console .num.note {
+    background:#95a5a6;
+    color:#ecf0f1;
+}
+
+.board_console .num.note:hover {
+    background:#95a5a6;
+    color:#f1c40f;
+}
+
+.board_console .num.selected {
+    background:#f1c40f;
+    box-shadow: 0px 0px 3px 3px #bdc3c7;
+}
+
+.board_console .num.note.selected {
+    background:#f1c40f;  
+    box-shadow: 0px 0px 3px 3px #bdc3c7;
+}
+
+.board_console .num.note.selected:hover {
+  color:white;
+}
+
+.board_console .num.no:hover {
+    color:white;
+    cursor:not-allowed;
+}
+
+.board_console .num.remove:hover {
+    color:white;
+    background:#c0392b;
+}
+
+.statistics {
+    text-align:center;    
+}
+
+#sudoku_menu {
+    background-color: black;
+    position: absolute;
+    z-index:2;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+#sudoku_menu ul {
+   margin: 0;
+   padding: 100px 0px 0px 0px;
+   list-style: none;
+}
+
+#sudoku_menu ul li{
+  margin: 0px 50px;
+}
+
+#sudoku_menu ul li a {
+  text-align:center;
+  padding: 15px 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #2c3e50;
+}
+
+#sudoku_menu.open-sidebar {
+  left:0px;
+}
+
+#sidebar-toggle {
+    z-index:3;
+    background: #bdc3c7;
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    padding: 22px 18px;
+    float: left;
+}
+
+#sidebar-toggle .bar{
+    display: block;
+    width: 28px;
+    margin-bottom: 4px;
+    height: 4px;
+    background-color: #f0f0f0;
+    border-radius: 1px;   
+}
+
+#sidebar-toggle .bar:last-child{
+     margin-bottom: 0;   
+}
+
+/*Responsive Stuff*/
+
+@media all and (orientation:portrait) and (min-width: 640px){
+    h1 { font-size:50px; }
+    .statistics { font-size:30px; }    
+    .sudoku_board .cell span { font-size:60px; }    
+    .board_console .num { font-size:60px; }
+}
+
+@media all and (orientation:landscape) and (min-height: 640px){
+    h1 { font-size:50px; }
+    .statistics { font-size:30px; }
+    .sudoku_board .cell span { font-size:50px; }
+    .board_console .num { font-size:50px; }
+}
+
+@media all and (orientation:portrait) and (max-width: 1000px){
+    .sudoku_board .cell span { font-size:30px; }   
+}
+
+@media all and (orientation:portrait) and (max-width: 640px){
+	.sudoku_board .cell span { font-size:24px; }
+  .sudoku_board .cell .note { font-size:10px; }
+}
+
+@media all and (orientation:portrait) and (max-width: 470px){
+	.sudoku_board .cell span { font-size:16px; }
+.sudoku_board .cell .note { font-size:8px; }
+}
+
+@media all and (orientation:portrait) and (max-width: 320px){
+	.sudoku_board .cell span { font-size:12px; }
+.sudoku_board .cell .note { font-size:8px; }
+}
+
+@media all and (orientation:portrait) and  (max-width: 240px){
+	.sudoku_board .cell span { font-size:10px; }   
+}
