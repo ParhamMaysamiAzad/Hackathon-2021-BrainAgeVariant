@@ -1,13 +1,13 @@
-let tile = document.getElementsByClassName("tile");
-let tiles = [...tile];
-const deck = document.getElementById("tile-deck");
+let card = document.getElementsByClassName("card");
+let cards = [...card];
+
+const deck = document.getElementById("card-deck");
 
 let moves = 0;
 let counter = document.querySelector(".moves");
 
 const stars = document.querySelectorAll(".fa-star");
 
-// declaring variable of matchedCards
 let matchedCard = document.getElementsByClassName("match");
 
  // stars list
@@ -19,9 +19,8 @@ let matchedCard = document.getElementsByClassName("match");
  // declare modal
  let modal = document.getElementById("popup1")
 
- // array for opened tiles
+ // array for opened cards
 var openedCards = [];
-
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -40,21 +39,20 @@ function shuffle(array) {
 
 document.body.onload = startGame();
 
-
 function startGame(){
  
     // empty the openCards array
     openedCards = [];
 
     // shuffle deck
-    tiles = shuffle(tiles);
-    // remove all exisiting classes from each tile
-    for (var i = 0; i < tiles.length; i++){
+    cards = shuffle(cards);
+    // remove all exisiting classes from each card
+    for (var i = 0; i < cards.length; i++){
         deck.innerHTML = "";
-        [].forEach.call(tiles, function(item) {
+        [].forEach.call(cards, function(item) {
             deck.appendChild(item);
         });
-        tiles[i].classList.remove("show", "open", "match", "disabled");
+        cards[i].classList.remove("show", "open", "match", "disabled");
     }
     // reset moves
     moves = 0;
@@ -73,15 +71,13 @@ function startGame(){
     clearInterval(interval);
 }
 
-
 var displayCard = function (){
     this.classList.toggle("open");
     this.classList.toggle("show");
     this.classList.toggle("disabled");
 };
 
-
-function tileOpen() {
+function cardOpen() {
     openedCards.push(this);
     var len = openedCards.length;
     if(len === 2){
@@ -103,8 +99,6 @@ function matched(){
     openedCards = [];
 }
 
-
-// description when tiles don't match
 function unmatched(){
     openedCards[0].classList.add("unmatched");
     openedCards[1].classList.add("unmatched");
@@ -119,19 +113,21 @@ function unmatched(){
 
 
 function disable(){
-    Array.prototype.filter.call(tiles, function(tile){
-        tile.classList.add('disabled');
+    Array.prototype.filter.call(cards, function(card){
+        card.classList.add('disabled');
     });
 }
 
+
 function enable(){
-    Array.prototype.filter.call(tiles, function(tile){
-        tile.classList.remove('disabled');
+    Array.prototype.filter.call(cards, function(card){
+        card.classList.remove('disabled');
         for(var i = 0; i < matchedCard.length; i++){
             matchedCard[i].classList.add("disabled");
         }
     });
 }
+
 
 function moveCounter(){
     moves++;
@@ -178,6 +174,7 @@ function startTimer(){
     },1000);
 }
 
+
 function congratulations(){
     if (matchedCard.length == 16){
         clearInterval(interval);
@@ -199,6 +196,7 @@ function congratulations(){
     };
 }
 
+
 function closeModal(){
     closeicon.addEventListener("click", function(e){
         modal.classList.remove("show");
@@ -206,17 +204,19 @@ function closeModal(){
     });
 }
 
+
 function playAgain(){
     modal.classList.remove("show");
     startGame();
 }
 
-for (var i = 0; i < tiles.length; i++){
-    tile = tiles[i];
-    tile.addEventListener("click", displayCard);
-    tile.addEventListener("click", tileOpen);
-    tile.addEventListener("click",congratulations);
-};
 
+// loop to add event listeners to each card
+for (var i = 0; i < cards.length; i++){
+    card = cards[i];
+    card.addEventListener("click", displayCard);
+    card.addEventListener("click", cardOpen);
+    card.addEventListener("click",congratulations);
+};
 
 
