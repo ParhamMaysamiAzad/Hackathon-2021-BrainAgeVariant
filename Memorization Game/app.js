@@ -1,15 +1,10 @@
-// tiles array holds all tiles
 let tile = document.getElementsByClassName("tile");
 let tiles = [...tile];
-
-// deck of all tiles in game
 const deck = document.getElementById("tile-deck");
 
-// declaring move variable
 let moves = 0;
 let counter = document.querySelector(".moves");
 
-// declare variables for star icons
 const stars = document.querySelectorAll(".fa-star");
 
 // declaring variable of matchedCards
@@ -28,9 +23,6 @@ let matchedCard = document.getElementsByClassName("match");
 var openedCards = [];
 
 
-// @description shuffles tiles
-// @param {array}
-// @returns shuffledarray
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -46,11 +38,9 @@ function shuffle(array) {
 };
 
 
-// @description shuffles tiles when page is refreshed / loads
 document.body.onload = startGame();
 
 
-// @description function to start a new play 
 function startGame(){
  
     // empty the openCards array
@@ -84,7 +74,6 @@ function startGame(){
 }
 
 
-// @description toggles open and show class to display tiles
 var displayCard = function (){
     this.classList.toggle("open");
     this.classList.toggle("show");
@@ -92,7 +81,6 @@ var displayCard = function (){
 };
 
 
-// @description add opened tiles to OpenedCards list and check if tiles are match or not
 function tileOpen() {
     openedCards.push(this);
     var len = openedCards.length;
@@ -107,7 +95,6 @@ function tileOpen() {
 };
 
 
-// @description when tiles match
 function matched(){
     openedCards[0].classList.add("match", "disabled");
     openedCards[1].classList.add("match", "disabled");
@@ -131,15 +118,12 @@ function unmatched(){
 }
 
 
-// @description disable tiles temporarily
 function disable(){
     Array.prototype.filter.call(tiles, function(tile){
         tile.classList.add('disabled');
     });
 }
 
-
-// @description enable tiles and disable matched tiles
 function enable(){
     Array.prototype.filter.call(tiles, function(tile){
         tile.classList.remove('disabled');
@@ -149,8 +133,6 @@ function enable(){
     });
 }
 
-
-// @description count player's moves
 function moveCounter(){
     moves++;
     counter.innerHTML = moves;
@@ -178,8 +160,6 @@ function moveCounter(){
     }
 }
 
-
-// @description game timer
 var second = 0, minute = 0; hour = 0;
 var timer = document.querySelector(".timer");
 var interval;
@@ -198,8 +178,6 @@ function startTimer(){
     },1000);
 }
 
-
-// @description congratulations when all tiles match, show modal and moves, time and rating
 function congratulations(){
     if (matchedCard.length == 16){
         clearInterval(interval);
@@ -221,8 +199,6 @@ function congratulations(){
     };
 }
 
-
-// @description close icon on modal
 function closeModal(){
     closeicon.addEventListener("click", function(e){
         modal.classList.remove("show");
@@ -230,15 +206,11 @@ function closeModal(){
     });
 }
 
-
-// @desciption for user to play Again 
 function playAgain(){
     modal.classList.remove("show");
     startGame();
 }
 
-
-// loop to add event listeners to each tile
 for (var i = 0; i < tiles.length; i++){
     tile = tiles[i];
     tile.addEventListener("click", displayCard);
