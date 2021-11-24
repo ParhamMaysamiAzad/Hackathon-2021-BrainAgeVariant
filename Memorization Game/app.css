@@ -34,11 +34,6 @@ h1 {
 }
 
 
-/*
- * Styles for the deck of cards
- */
-
-
 .deck {
 	width: 85%;
 	background: #716F71;
@@ -105,11 +100,6 @@ h1 {
 }
 
 
-/*
- * Styles for the Score Panel
- */
-
-
 .score-panel {
 	text-align: left;
 	margin-bottom: 10px;
@@ -141,10 +131,6 @@ h1 {
 	margin: 0 1rem;
 }
 
-
-/*
- * Styles for congratulations modal
- */
 
 
 .overlay {
@@ -224,7 +210,6 @@ h1 {
 	border-radius: 5px;
 }
 
-/* animations */
 @keyframes flipInY {
 	from {
 		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
@@ -296,8 +281,6 @@ h1 {
 }
 
 
-/****** Media queries
-***************************/
 
 
 @media (max-width: 320px) {
@@ -312,8 +295,6 @@ h1 {
 }
 
 
-/* For Tablets and larger screens
-****************/
 
 @media (min-width: 768px) {
 	.container {
