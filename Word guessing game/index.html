@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Word Scramble</title>
+  </head>
+  <body>
+    <h1>Braintrain word guessing game</h1>
+    <script>
+
+      var WORDS     = ["abandon", "accept", "cat", "advice","age","amazing","ask","balance","bedroom","brain","busy","celebrate","cheap","coffee","container","cook","cooperation","correct","coverage","criticize","dangerous","daughter","defendant","democracy","demonstration","development","difficult","discovery","dominant","earnings","economic","efficiency","employment","enforcement","environment","establishment","evidence","examination","exhibition","expectation","extraordinary","failure","fantasy","feature","finance","fitness","food","football","grocery","happy","headquarters","heritage","historical","homeless","human","identification","laboratory","literature"];
+      var SCRAMBLED = ["dnabano", "pacect", "tca", "vadcie","eag","zamagni","kas","lnabace","drbemoo","abirn","ybsu","lecrabete","hacpe","coeeff","ocninerta","okoc","oeoaintcopr","orccret","cgvoreea","iczcitire","ndsougare","eaugtdhr","anteneddf","oemcdacry","mnoeiatotnsrd","mpetdovnele","diictfufl","crdvesoyi","diaonmtn","agnnrise","cecoiomn","ifeincecfy","mmynloptee","noeeretmfnc","nenevrotmni","lhtsisnbmeaet","cieevend","inematnixoa","etihibnoix","ancxietopte","anoytrdxreiar","afeilru","afsatyn","tufreea","anciefn","etsfnis","odof","obtoallf","gocryre","yppah","eurqraeashtd","eatreigh","lhaisoticr","eolemhss","hnuam","tonniciaidieft","obytaroalr","ierlttaeur"];
+
+      var playing = true;
+
+      while (playing) {
+         var randomNumber = Math.floor(Math.random() * WORDS.length);
+
+         var randomWord = SCRAMBLED[randomNumber];
+
+         var userInput = prompt ("Can you guess the word?" + "--->" + randomWord);
+
+         console.log(userInput);
+
+         if (userInput == WORDS[randomNumber]) {
+          alert("Congrats!");
+         } else  {
+          alert("Try again. The answer was: " + "--->" + WORDS[randomNumber]);
+         }
+
+          playing = confirm("Press OK To keep playing or Cancel to quit");
+
+      }
+
+      alert("goodbye!");
+    </script>
+  </body>
+</html>
