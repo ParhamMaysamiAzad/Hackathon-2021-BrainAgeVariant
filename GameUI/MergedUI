@@ -124,19 +124,17 @@ function draw() {
   
     mouseClicked = function() {
     startButton.handleMouseClick();
-    scoreButton.handleMouseClick();
-  };  
+    };  
 
   // Scene translations
   if(scene == 0){
     // Introductory UI
-    background(255,255,255);
+    background(255,153, 0);
     startButton.draw();
-    scoreButton.draw();
     
   }else if(scene === 1){
     // Game Selection UI
-    background(255,255,255);
+    background(255,153,0);
     sudokuButton.draw();
     wmButton.draw();
     sasButton.draw();
