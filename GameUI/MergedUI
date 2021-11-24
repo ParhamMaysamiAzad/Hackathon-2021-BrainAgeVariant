@@ -64,18 +64,6 @@ var startButton = new Button({
      }
 });
 
-// Score button
-var scoreButton;
-  var scoreButton = new Button({
-    x:400,
-    y:525,
-    width: 350,
-    height:75,
-    label: "Scores",
-    color: "white",
-    onClick : function (){ scene = 2;
-     }
-});
 
 // Sudoku button
 var sudokuButton;
