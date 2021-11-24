@@ -90,14 +90,14 @@ var sudokuButton;
      }
 });
 
-// Word-Match button
+// Word-Guessing button
 var wmButton;
   var wmButton = new Button({
     x:400,
     y:230,
     width: 650,
     height:100,
-    label: "Word-Match",
+    label: "Word-Guessing",
     color: "white",
     onClick : function (){ scene = 4;
      }
@@ -116,14 +116,14 @@ var sasButton;
      }
 });
 
-// Number memorisation button
+// Memory game button
 var nmButton;
   var nmButton = new Button({
     x:400,
     y:510,
     width: 650,
     height:100,
-    label: "Number Memorisation",
+    label: "Memory game",
     color: "white",
     onClick : function (){ scene = 6;
      }
