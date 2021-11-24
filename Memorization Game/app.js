@@ -1,9 +1,9 @@
-// cards array holds all cards
-let card = document.getElementsByClassName("card");
-let cards = [...card];
+// tiles array holds all tiles
+let tile = document.getElementsByClassName("tile");
+let tiles = [...tile];
 
-// deck of all cards in game
-const deck = document.getElementById("card-deck");
+// deck of all tiles in game
+const deck = document.getElementById("tile-deck");
 
 // declaring move variable
 let moves = 0;
@@ -24,11 +24,11 @@ let matchedCard = document.getElementsByClassName("match");
  // declare modal
  let modal = document.getElementById("popup1")
 
- // array for opened cards
+ // array for opened tiles
 var openedCards = [];
 
 
-// @description shuffles cards
+// @description shuffles tiles
 // @param {array}
 // @returns shuffledarray
 function shuffle(array) {
@@ -46,7 +46,7 @@ function shuffle(array) {
 };
 
 
-// @description shuffles cards when page is refreshed / loads
+// @description shuffles tiles when page is refreshed / loads
 document.body.onload = startGame();
 
 
@@ -57,14 +57,14 @@ function startGame(){
     openedCards = [];
 
     // shuffle deck
-    cards = shuffle(cards);
-    // remove all exisiting classes from each card
-    for (var i = 0; i < cards.length; i++){
+    tiles = shuffle(tiles);
+    // remove all exisiting classes from each tile
+    for (var i = 0; i < tiles.length; i++){
         deck.innerHTML = "";
-        [].forEach.call(cards, function(item) {
+        [].forEach.call(tiles, function(item) {
             deck.appendChild(item);
         });
-        cards[i].classList.remove("show", "open", "match", "disabled");
+        tiles[i].classList.remove("show", "open", "match", "disabled");
     }
     // reset moves
     moves = 0;
@@ -84,7 +84,7 @@ function startGame(){
 }
 
 
-// @description toggles open and show class to display cards
+// @description toggles open and show class to display tiles
 var displayCard = function (){
     this.classList.toggle("open");
     this.classList.toggle("show");
@@ -92,8 +92,8 @@ var displayCard = function (){
 };
 
 
-// @description add opened cards to OpenedCards list and check if cards are match or not
-function cardOpen() {
+// @description add opened tiles to OpenedCards list and check if tiles are match or not
+function tileOpen() {
     openedCards.push(this);
     var len = openedCards.length;
     if(len === 2){
@@ -107,7 +107,7 @@ function cardOpen() {
 };
 
 
-// @description when cards match
+// @description when tiles match
 function matched(){
     openedCards[0].classList.add("match", "disabled");
     openedCards[1].classList.add("match", "disabled");
@@ -117,7 +117,7 @@ function matched(){
 }
 
 
-// description when cards don't match
+// description when tiles don't match
 function unmatched(){
     openedCards[0].classList.add("unmatched");
     openedCards[1].classList.add("unmatched");
@@ -131,18 +131,18 @@ function unmatched(){
 }
 
 
-// @description disable cards temporarily
+// @description disable tiles temporarily
 function disable(){
-    Array.prototype.filter.call(cards, function(card){
-        card.classList.add('disabled');
+    Array.prototype.filter.call(tiles, function(tile){
+        tile.classList.add('disabled');
     });
 }
 
 
-// @description enable cards and disable matched cards
+// @description enable tiles and disable matched tiles
 function enable(){
-    Array.prototype.filter.call(cards, function(card){
-        card.classList.remove('disabled');
+    Array.prototype.filter.call(tiles, function(tile){
+        tile.classList.remove('disabled');
         for(var i = 0; i < matchedCard.length; i++){
             matchedCard[i].classList.add("disabled");
         }
@@ -199,7 +199,7 @@ function startTimer(){
 }
 
 
-// @description congratulations when all cards match, show modal and moves, time and rating
+// @description congratulations when all tiles match, show modal and moves, time and rating
 function congratulations(){
     if (matchedCard.length == 16){
         clearInterval(interval);
@@ -238,10 +238,13 @@ function playAgain(){
 }
 
 
-// loop to add event listeners to each card
-for (var i = 0; i < cards.length; i++){
-    card = cards[i];
-    card.addEventListener("click", displayCard);
-    card.addEventListener("click", cardOpen);
-    card.addEventListener("click",congratulations);
+// loop to add event listeners to each tile
+for (var i = 0; i < tiles.length; i++){
+    tile = tiles[i];
+    tile.addEventListener("click", displayCard);
+    tile.addEventListener("click", tileOpen);
+    tile.addEventListener("click",congratulations);
 };
+
+
+
