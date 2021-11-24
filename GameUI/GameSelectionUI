@@ -1,3 +1,4 @@
+//p5
 // <---------HEADER--------->
 function setup() {
   createCanvas(800, 600);
