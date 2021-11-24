@@ -1,6 +1,3 @@
-/**
-Sudoku game by deepcrazyworld
-*/
 function Sudoku(params) {
     var t = this;
   
@@ -56,9 +53,6 @@ Sudoku.prototype.timer = function() {
   }
 };
 
-/**
-Shuffle array
-*/
 Sudoku.prototype.shuffle = function(array) {
     var currentIndex   = array.length, 
         temporaryValue = 0,
@@ -75,9 +69,7 @@ Sudoku.prototype.shuffle = function(array) {
     return array;
 };
 
-/**
-Generate the sudoku board
-*/
+//Sudoku board
 Sudoku.prototype.boardGenerator = function(n, fixCellsNr) {
     var matrix_fields = [],
         index = 0,
@@ -85,16 +77,14 @@ Sudoku.prototype.boardGenerator = function(n, fixCellsNr) {
         j = 0,
         j_start = 0,
         j_stop = 0;
-  
-    //generate solution
+
     this.boardSolution = [];
   
-    //shuffle matrix indexes
+    //shufle matrix
     for (i = 0; i < this.nn; i++) {
         matrix_fields[i] = i+1;
     }  
     
-    //shuffle sudoku 'collors'
     matrix_fields = this.shuffle(matrix_fields);
     for (i = 0; i < n*n; i++) {
         for (j = 0; j < n*n; j++) {
@@ -104,14 +94,14 @@ Sudoku.prototype.boardGenerator = function(n, fixCellsNr) {
         }
     }
     
-    //shuffle sudokus indexes of bands on horizontal and vertical
+    //shuffle sudokus indexes
     var blank_indexes = [];    
     for (i = 0; i < this.n; i++) {
         blank_indexes[i] = i+1;        
     }
   
     
-    //shuffle sudokus bands horizontal
+    //shuffle sudokus bands
     var bands_horizontal_indexes = this.shuffle(blank_indexes);
     var board_solution_tmp = [];
     index = 0;
@@ -127,7 +117,6 @@ Sudoku.prototype.boardGenerator = function(n, fixCellsNr) {
     this.boardSolution = board_solution_tmp;
     
     
-    //shuffle sudokus bands vertical
     var bands_vertical_indexes   = this.shuffle(blank_indexes);
     board_solution_tmp = [];
     index = 0;    
@@ -144,13 +133,6 @@ Sudoku.prototype.boardGenerator = function(n, fixCellsNr) {
     }
     this.boardSolution = board_solution_tmp;
     
-    //shuffle sudokus lines on each bands horizontal
-    //TO DO
-  
-    //shuffle sudokus columns on each bands vertical
-    //TO DO
-    
-    //board init
     var board_indexes =[],
         board_init = [];
   
