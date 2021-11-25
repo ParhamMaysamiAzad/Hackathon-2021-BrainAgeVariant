@@ -64,7 +64,7 @@ Alternatively, you can create a seperate branch with your changes that will be m
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Final Code
-Game code (glitch) : https://final-braintrain-glich.glitch.me
+Games (glitch) : https://final-braintrain-glich.glitch.me </n>
 Game UI (p5) : https://editor.p5js.org/JacobA31/sketches/3NEIV9g85
 
 <p align="right">(<a href="#top">back to top</a>)</p>
